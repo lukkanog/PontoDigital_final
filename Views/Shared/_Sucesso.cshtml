@@ -1,0 +1,20 @@
+@model PontoDigital_final.ViewModels.SucessoViewModel
+@{
+    ViewData["Title"] = "Sucesso | Ponto Digital";
+    ViewData["css"] = "erro-style.css";
+
+    if (string.IsNullOrEmpty((string)TempData["sucesso"]) || string.IsNullOrEmpty((string)TempData["voltar"]))
+    {
+        Model.Mensagem = "Ação realizada com sucesso!";
+        Model.LinkVoltar = "Home/Index";
+    } else
+    {
+        Model.Mensagem = (string)TempData["sucesso"];
+        Model.LinkVoltar = (string)TempData["voltar"];
+    }
+}
+<main>
+    <h2>Sucesso!</h2>
+    <p>@Model.Mensagem</p>
+    <a class='link' href=@Model.LinkVoltar>Voltar</a>
+</main>

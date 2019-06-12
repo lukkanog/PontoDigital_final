@@ -1,0 +1,103 @@
+main{
+    background-color:#097bb2;
+    height: calc(100vh - 4em);
+    padding:auto;
+}
+h2{
+    color:#fff;
+    font-size:3em;
+    padding-top:1em;
+    text-align: center;
+}
+form{
+    display:flex;
+    flex-flow:column nowrap;
+    margin:auto;
+    width:40%;
+    color:#fff;
+    padding:5em 0 7em 0;
+}
+form input{
+    width:100%;
+    border:2px solid #f2a500;
+    border-radius:10px;
+    padding:0.5em 1em;
+}
+::placeholder{
+    font-family: 'Comfortaa', cursive;
+}
+.submit{
+    color:#fff;
+    font-size:1.5em;
+    background-color:#f2a500;
+    border:none;
+    padding:1em;
+    width:37%;
+    margin:1em 0;
+    align-self:center;
+}
+.submit:hover{
+    background-color:#c0ecf8;
+    text-shadow: 1px 1px 100px #000,-1px -1px 10px #000
+}
+form [type="submit"]{
+    display:block;
+    text-align:center;
+}
+
+.campo{
+    display:flex;
+    flex-flow:column;
+    padding:0.5em 0;
+}
+label{
+    font-size:1.5em;
+    margin-bottom:0.25em;
+    display:none;
+}
+#mensagem{
+    height:80px;
+    
+}
+
+
+@media screen and (max-width:1366px){
+    h2{
+        padding-top:3em;
+    }
+    main{
+        height: calc(100vh - 4em);
+    }
+    form{
+        padding:2em 0 3em 0;
+    }
+    .submit{
+        width:50%;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    h2{
+        font-size:2em;
+    }
+    form{
+        width:80%;
+    }
+    .submit{
+        font-size:1.2em;
+        padding:0.5em;
+        width:70%;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    h2{
+        font-size:1.5em;
+        padding-top:1em;
+    }
+    form{
+        padding:1em 1.5em 3em 0;
+    }
+}

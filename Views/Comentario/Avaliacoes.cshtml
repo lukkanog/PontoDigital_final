@@ -1,0 +1,23 @@
+@model PontoDigital_final.ViewModels.ComentarioViewModel
+@{
+    ViewData["Title"] = "Avaliações | Ponto Digital";
+    ViewData["css"] = "avaliações-style.css";
+}
+
+<main class="container">
+    <section class="content">
+        <h2>Avaliações de alguns de nossos clientes</h2>
+            @foreach (var comentario in Model.ListaDeComentarios)
+            {
+                <div class="pessoa">
+                    <img src="~/img/usuario_defaultpicture.png" alt="Foto de perfil">
+                    <div class="texto">
+                        <h3>@comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
+                        <h3>@comentario.Assunto</h3>
+                        <p>@comentario.Mensagem</p>
+                    </div>
+                </div>
+            }
+        <a href='@Url.Action("CadastrarComentario","Comentario")'>Envie sua avaliação</a>
+    </section>
+</main>

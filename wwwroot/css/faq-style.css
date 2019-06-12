@@ -1,0 +1,78 @@
+main{
+     background-color:#097bb2;
+     padding-bottom:3em;
+}
+h2{
+    color:#fff;
+    font-size:3em;
+    padding:1em 0;
+    text-align: center;
+}
+.textbox{
+    color:#fff;
+
+    border:3px solid #ffa500;
+    border-radius:20px;
+
+    padding:1.5em;
+    margin:1em auto;
+    width:70%;
+}
+.textbox button{
+    font-family: 'Comfortaa', cursive;
+    background-color:#097bb2;
+    color:#fff;
+    border:none;
+    text-align:left;
+    display:block;
+}
+.textbox button:hover{
+    cursor:help;
+}
+.textbox button{
+    margin-bottom:0.5em;
+    font-size:2em;
+    width:100%;
+    font-weight:bolder;
+}
+.textbox p{
+    display: none;
+}
+
+
+@media screen and (max-width:1366px){
+    h2{
+        padding:1em 0 0.5em 0;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    h2{
+        font-size:2em;
+    }
+    .textbox{
+        width:90%;
+    }
+    .textbox h3{
+        font-size:1.5em;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    h2{
+        font-size:1.5em;
+        padding-top:2em;
+    }
+    .textbox{
+        width:90%;
+        padding:1em 0.5em;
+    }
+    .textbox h3{
+        font-size:1.2em;
+    }
+    .textbox p{
+        font-size:1em;
+    }
+}

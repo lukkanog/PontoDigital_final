@@ -1,0 +1,10 @@
+main{
+    background-color:#097bb2;
+    height: calc(100vh - 4em);
+}
+h2{
+    font-size:3em;
+    text-align:center;
+    padding:1em;
+    color:#FFF;
+}

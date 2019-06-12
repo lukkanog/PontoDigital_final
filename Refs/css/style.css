@@ -1,0 +1,481 @@
+*{
+    margin:0;
+    padding:0;
+}
+main{
+    padding-top:4em;
+}
+.container{
+    width:100%;
+}
+.content{
+    width:85%;
+    margin:0 auto;
+    font-family: 'Comfortaa', cursive, sans-serif;
+}
+header{
+    position:fixed;
+}
+.topo{
+    background-color: #f2a620;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    height:4em;
+    z-index: 1001;
+}
+.menu ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+.menu ul a{
+    text-decoration:none;
+    color:#004;
+    padding:1.5em;
+}
+.menu ul a:hover{
+    background-color:#BF8319;
+    color:#fff;
+    text-shadow:1px 1px 50px #ccc;
+}
+#login{
+    color:#fff;
+}
+.logo{
+    display:flex;
+    text-decoration:none;
+    align-items: center;;
+    color:black
+}
+.logo img{
+    height:6em;
+    position: relative;
+    top:1em;
+}
+h1{
+    padding:1em;
+    font-family:"Sui Generis", sans-serif;
+    color:	#005BB5;
+    font-weight:bolder;
+}
+button{
+    height:100%;
+    background:none;
+    border:none;
+    display:none;
+}
+button:hover{
+    cursor:pointer;
+}
+button img{
+    height:60%;
+}
+
+.banner{
+    height:94vh;
+    position:relative;
+    top:-1em;
+
+    background-image: url(../img/empresa.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+
+}
+.banner img{
+    height:70vh;
+}
+.banner p{
+    font-size:2.5em;
+    width:580px;
+    text-align: justify;
+    font-weight:bold;
+}
+.banner a{
+    text-decoration: none;
+    color:#fe8f00;
+    text-shadow:3px 3px 30px #fff;
+
+}
+.banner a:hover{
+    color:#fff;
+    text-shadow:3px 3px 30px #000;
+}
+
+#telas{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    padding:2em 0;
+}
+#telas img{
+    height:40vh;
+    position:relative;
+    top:50px;
+}
+.titulo_e_texto{
+    display:Flex;
+    flex-flow:column;
+    justify-content: center;
+    align-content: flex-start;
+    width:600px;
+}
+.titulo_e_texto h2{
+    margin-bottom:0.5em;
+    font-size:2.5em;
+    color:orange;
+
+}
+.titulo_e_texto p{
+    text-align:justify;
+    font-size:1.2em;
+}
+#brasil{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    padding:2em 0;
+}
+#brasil img{
+    height:55vh;
+}
+.funcionalidades{
+    background-color:#097bb2;
+    padding:1em 0;
+
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    color:white;    
+    justify-content: space-around;
+    margin:auto;
+}
+.funcionalidades h2{
+    display:none;
+}
+.coluna{
+    display:flex;
+    flex-flow:column;
+    justify-content: space-evenly;
+}
+
+.tique{
+    display:Flex;
+    align-items:center;
+    font-size:2em;
+    padding:1em 0;
+}
+.tique img{
+    height:2em;
+    margin-right:10px;   
+}
+
+
+.planos{
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+.planos h2{
+    font-size:2.5em;
+    color:orange;
+    padding:0.5em 0;
+}
+.planos p{
+    font-size:1.5em;
+    width:600px;
+    text-align: justify;    
+}
+.planos a{
+    text-decoration:none;
+    color:#fff;
+    padding:0.5em 1em;
+    font-size:1.8em;
+    background-color:#F2A620;
+    border:1px #f2a620;
+    border-radius:10px;
+}
+.planos a:hover{
+    margin-top:-10px;
+    background-color:#097bb2;
+}
+.planos .content{
+    padding:10vh 0;
+}
+
+
+footer{
+    background-color:#00477a;
+    color:#fff;
+}
+footer .content{
+    font-family: 'Varela Round', sans-serif;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+}
+footer h3{
+    text-align:center;
+    padding-bottom:0.75em;
+    margin-top:1em;
+    font-size:1.5em;
+}
+#facebook{
+    display:flex;
+    align-items:center;
+    padding:0.5em 0;
+}
+footer img{
+    height:50px;
+}
+address{
+    display:flex;
+    margin-bottom:1em;
+    flex-flow:column;
+}
+address div{
+    display:flex;
+    align-items:center;
+    padding:0.5em 0;
+}
+#telefone img{
+    height:40px;
+}
+
+
+
+
+@media screen and (max-width:1366px){
+    .topo{
+        height:3.5em;
+    }
+    .menu ul a{
+        font-size:0.8em;
+        padding:2em 0.5em 1.6em 0.5em;
+    }
+    .logo img{
+        height:5.5em;
+    }
+    .menu ul{
+        width:800px;
+    }
+    h1{
+        font-size:1.5em;
+        padding-left:0.5em;
+    }
+    .banner p{
+        font-size:2em;
+        width:500px;
+    }
+    .titulo_e_texto{
+        width:500px;
+    }
+    .titulo_e_texto h2{
+        font-size:2em;
+    }
+    .titulo_e_texto p{
+        font-size:1em;
+    }
+    .tique{
+        font-size:1.5em;
+        padding:0.5em 0;
+    }
+    .planos .content{
+        padding:15vh 0;
+    }
+    .planos h2{
+        font-size:2em;
+        padding:0;
+    }
+    .planos p{
+        font-size:1em;
+        width:70%;
+    }
+    .planos a{
+        font-size:1.5em;
+        text-align:center;
+    }
+    .planos a:hover{
+        margin:0;
+        text-shadow:1px 1.5px 20px #000,-1px -1.5px 20px #000;
+    }
+}
+
+@media screen and (max-width:768px){
+    .content{
+        width:90%;
+    }
+    .topo button{
+        display: block;
+        position:absolute;
+        top:0;
+        right:3em;
+    }
+    .menu{
+        display:none;
+        background-color:#f2a620;
+        position:relative;
+        top:45vh;
+        right:-56px;
+
+        height:100vh;
+        box-shadow:1px 0px 50px #000;
+    }
+    .menu ul{
+        flex-flow:column;
+        width:300px;
+        height:100%;
+        text-align:center;
+    }
+    .menu ul a{
+        font-size:1.2em;
+    }
+    .banner h2{
+        display: none;
+
+    }
+    .banner img{
+        height:40%;
+    }
+    .banner{
+        justify-content: space-around;
+    }
+    .banner p{
+        width:45%;
+        font-size:1.5em;
+        text-align:left;
+    }
+    .titulo_e_texto{
+        width:40%;
+    }
+    .titulo_e_texto p{
+        font-size:1em;
+    }
+    .titulo_e_texto h2{
+        font-size:1.2em;
+    }
+    #telas img{
+        top:20px;
+        height:250px;
+    }
+    #brasil img{
+        height:300px;
+    }
+    .funcionalidades{
+        justify-content: flex-start;
+        padding:auto;
+    }
+    .coluna{
+        justify-content: flex-start;
+        font-size:1.2em;
+    }
+    .tique{
+        padding:0.3em 0;
+    }
+    .planos h2{
+        font-size:1.5em;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    .logo img{
+        height:4em;
+        top:0.5em;
+    }
+    h1{
+        font-size:1em;
+    }
+    .topo button{
+        right:1em;
+    }
+    .menu{
+        right:120px;
+    }
+
+    .menu ul li a{
+        font-size:1em;
+    }
+    .banner{
+        flex-flow:column nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner p{
+        width:90%;
+        font-size:1.2em;
+        margin:0 auto;
+    }
+    .banner img{
+        height:30%;
+        padding-bottom:1em;
+    }
+    .titulo_e_texto{
+        width:95%;
+    }
+    .titulo_e_texto h2{
+        font-size:1em;
+    }
+    .titulo_e_texto p{
+        font-size:0.8em;
+    }
+    #telas{
+        flex-flow:column-reverse;
+    }
+    #telas img{
+        /* width:30%; */
+        height:30vh;
+        margin-bottom:2em;
+    }
+    #brasil{
+        flex-flow:column;
+    }
+    #brasil img{
+        /* width:60%; */
+        height:50vh;
+        margin-bottom:0.5em;
+    }
+    .coluna{
+        font-size:0.75em;
+    }
+    .planos{
+        flex-flow:column;
+    }
+    .planos h2{
+        font-size:1.4em;
+        padding-bottom:0.3em;
+    }
+    .planos p{
+        width:100%;
+        font-size:1em;
+    }
+    .planos div{
+        padding-bottom:1.5em;
+    }
+    .planos a{
+        font-size:1em;
+        padding:1.5em 1em;
+    }
+    footer h3{
+        font-size:1em;
+    }
+    footer img{
+        height:25px;
+    }
+    #telefone img{
+        height:20px;
+    }
+    footer address{
+        font-size:0.5em;
+    }
+
+}

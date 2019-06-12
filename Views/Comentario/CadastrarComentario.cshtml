@@ -1,0 +1,62 @@
+@model PontoDigital_final.ViewModels.ComentarioViewModel
+
+@{
+    ViewData["Title"] = "Faça seu comentário | Ponto Digital";
+    ViewData["css"] = "faleconosco-style.css";
+}
+<main class="container">
+    <div class="content">
+        <h2>Avalie o Ponto Digital</h2>
+        <form action='@Url.Action("CadastrarComentario","Comentario")' method="POST">
+            @if (@Model.Usuario != null)
+            {
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" name="nome" placeholder="Exemplo: Luis Inacio Lula da Silva" maxlength="50" value="@Model.Usuario.Nome" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" placeholder="Exemplo:(11)940028922" maxlength="12" value="@Model.Usuario.Telefone" required>
+                </div>
+                <div class="campo">
+                    <label for="emial">Email</label>
+                    <input type="email" name="email" maxlength="50" id="email" placeholder="Exemplo: email@outlook.com" value="@Model.Usuario.Email" required>
+                </div>
+                <label for="empresa">Empresa em que trabalha</label>
+                <div class="campo">
+                    <input type="text" name="empresa" placeholder="Exemplo: Agora Vai" maxlength="50" value="@Model.Usuario.Empresa.Nome" required>
+                </div>
+                <div class="campo">
+                    <label for="cnpj">CNPJ da empresa</label>
+                    <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" value="@Model.Usuario.Empresa.Cnpj" required>
+                </div>
+            }else
+            {
+                <div class="campo">
+                    <input type="text" name="nome" placeholder="Nome" maxlength="50" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="numero" placeholder="Número de telefone" maxlength="12" required>
+                </div>
+                <div class="campo">
+                    <input type="email" name="email" maxlength="50" id="email" placeholder="Email" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="empresa" placeholder="Empresa" maxlength="50" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" required>
+                </div>
+            }
+            <div class="campo">
+                <label for="assunto">Avaliaçao</label>
+                <input type="text" name="assunto" placeholder="Exemplo: Muito bom!" maxlength="50" required>
+            </div>
+            <div class="campo">
+                <label for="mensagem">Conte - nos brevemente como é sua experiência com o Ponto Digital</label>
+                <input type="textarea" name="mensagem" maxlength="500" id="mensagem" placeholder="Deixe aqui seu comentário" required>
+            </div>
+            <input type="submit" value="Enviar Mensagem" class="submit">
+        </form>
+    </div>
+</main>

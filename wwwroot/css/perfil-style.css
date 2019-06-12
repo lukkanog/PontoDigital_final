@@ -1,0 +1,30 @@
+main{
+    background-color:#097bb2;
+    height: calc(100vh - 4em);
+}
+h2{
+    color:#fff;
+    text-align:center;
+    font-size:3em;
+    padding:1em 0;
+}
+.dados-perfil{
+    display:flex;
+    justify-content: space-around;
+}
+.link{
+    text-decoration: none;
+    color: #f6b321;
+}
+#dados-perfil{
+    color:#fff;
+    padding:0.4em 0;
+}
+#foto_perfil{
+    height: 30vh;
+    width:30vh;
+}
+#flex-coluna{
+    display:flex;
+    flex-flow: column;
+}

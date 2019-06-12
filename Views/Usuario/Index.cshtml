@@ -1,0 +1,54 @@
+@model PontoDigital_final.ViewModels.ErroViewModel
+@{
+    ViewData["Mensagem"] = "Faça seu cadastro";
+    ViewData["Title"] = "Cadastro | Ponto Digital";
+    ViewData["css"] = "faleconosco-style.css";
+}
+<main class="container">
+    <div class="content">
+        <h2>@ViewData["Mensagem"]</h2>
+        
+        <form action='@Url.Action("CadastrarUsuario","Usuario")' method="POST" enctype="multipart/form-data">
+            <div class="campo">
+                <input type="text" name="nome" placeholder="Nome" maxlength="80" minlength="1" required>
+            </div>
+            <div class="campo">
+                <input type="text" name="telefone" placeholder="Número de telefone" maxlength="18" required>
+            </div>
+            <div class="campo">
+                <input type="email" name="email" maxlength="50" id="email" placeholder="Email" required>
+            </div>
+            <div class="campo">
+                <select name="genero" id="genero" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                    <option value="OUTRO">Outro</option>
+                </select>
+            </div>
+            <div class="campo">
+                <input type="text" name="endereco" placeholder="Seu Endereço" maxlength="70" required>
+            </div>
+            <div class="campo">
+                <input type="date" name="data-nascimento" placeholder="Data de Nascimento" required>
+            </div>
+            <div class="campo">
+                <input type="text" name="empresa" placeholder="Empresa" maxlength="50" required>
+            </div>
+            <div class="campo">
+                <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" required>
+            </div>
+            <div class="campo">
+                <input type="file" name="foto">
+            </div>
+            <div class="campo">
+                <input type="password" name="senha" placeholder="Nova Senha" required minlength="8" maxlength="40">
+            </div>
+            <div class="campo">
+                <input type="password" name="confirmarsenha" placeholder="Confirmar Senha" required minlength="8"
+                    maxlength="40">
+            </div>
+            <input type="submit" value="Cadastrar" class="submit">
+        </form>
+    </div>
+</main>

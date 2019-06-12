@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\46735197879\\Desktop\\lucas\\WebMvc\\PontoDigital_final\\PontoDigital_final.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  }
+}

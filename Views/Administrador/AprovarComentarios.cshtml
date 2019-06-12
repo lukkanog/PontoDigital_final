@@ -1,0 +1,36 @@
+@model PontoDigital_final.ViewModels.ComentarioViewModel
+@{
+    ViewData["Title"] = "Comentarios | Ponto Digital";
+    ViewData["css"] = "avaliações-style.css";
+}
+
+<main>
+    @if (Model.ListaDeComentarios.Count == 0)
+    {
+        <h2>Ainda não há comentários a serem aprovados!</h2>
+    } else 
+    {
+        <h2>Comentarios feitos</h2>
+        @foreach (var comentario in Model.ListaDeComentarios)
+        {
+            <div class="pessoa">
+                    <img src="~/img/usuario_defaultpicture.png" alt="Foto de Perfil">/
+                    <div class="texto">
+                        <h3>Autor: @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
+                        <p>Comentario feito em: @comentario.DataDoComentario</p>
+                        <h4>Assunto : @comentario.Assunto</h4>
+                        <p>@comentario.Mensagem</p>
+                        @if (comentario.EstaAprovado == false)
+                        {
+                            <a href="/Administrador/AprovarComentario?id=@comentario.Id">Aprovar</a>
+                        } else
+                        {
+                            <a href="/Administrador/RecusarComentario?id=@comentario.Id">Não exibir mais</a>
+                        }
+                    </div>
+                    
+                </div>        
+        }
+
+    }
+</main>

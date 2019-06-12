@@ -1,0 +1,25 @@
+@model PontoDigital_final.ViewModels.ErroViewModel
+@{
+    ViewData["Title"] = "Erro | Ponto Digital";
+    ViewData["css"] = "erro-style.css";
+
+    if (string.IsNullOrEmpty((string)TempData["erro"]) || string.IsNullOrEmpty((string)TempData["voltar"]))
+    {
+        Model.Mensagem = "Um erro inesperado aconteceu";
+        Model.LinkVoltar = "Home/Index";
+    } else
+    {
+        Model.Mensagem = (string)TempData["erro"];
+        Model.LinkVoltar = (string)TempData["voltar"];
+    }
+
+}
+<main class="container">
+    <div class="content">
+        <h2>Erro</h2>
+        <h3>Oops !</h3>
+        <!-- <p>@TempData["erro"]</p> -->
+        <p>@Model.Mensagem</p>
+        <a class='link' href=@Model.LinkVoltar>Voltar</a>
+    </div>
+</main>

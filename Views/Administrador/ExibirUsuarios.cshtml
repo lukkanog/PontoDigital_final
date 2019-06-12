@@ -1,0 +1,32 @@
+@model PontoDigital_final.ViewModels.UsuarioViewModel
+@{
+    ViewData["Title"] = "Avaliações | Ponto Digital";
+    ViewData["css"] = "avaliações-style.css";
+}
+
+<main class="container">
+    <section class="content">
+        <h2>Usuários cadastrados</h2>
+        @if (Model.ListaDeUsuarios.Count == 0)
+        {
+            <h2>Ainda não há usuários cadastrados no programa!</h2>
+        }
+        @foreach (var item in Model.ListaDeUsuarios)
+        {
+            <div class="pessoa">
+                <img src="~/img/usuario_defaultpicture.png" alt="Foto de perfil">
+                <div class="texto">
+                    <p><b>Nome:</b> @item.Nome</p>
+                    <p><b>Id:</b> @item.Id</p>
+                    <p><b>Gênero:</b> @item.Genero</p>
+                    <p><b>Empresa:</b> @item.Empresa.Nome</p>
+                    <p><b>Email</b>: @item.Email</p>
+                    <p><b>Telefone:</b> @item.Telefone</p>
+                    <p><b>Endereço:</b> @item.Endereco</p>
+                    <p><b>Data de nascimento:</b> @item.DataNascimento.ToShortDateString()</p>
+                    <p><b>CNPJ da empresa:</b> @item.Empresa.Cnpj</p>
+                </div>
+            </div>
+        }
+    </section>
+</main>

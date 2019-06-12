@@ -1,0 +1,141 @@
+﻿@{
+    var user = (string)ViewBag.User;
+    var admin = (string)ViewBag.Admin;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    @if (!ViewData["Title"].Equals("Ponto Digital"))
+    {
+        <link rel="stylesheet" href='~/css/@ViewData["css"]'>
+        
+    }
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="~/fonts/sui-generis-free.ttf"> -->
+    <link rel="icon" href="~/img/logo_semletras.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn_menu").click(function () {
+                $(".menu").slideToggle("fast");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header class='topo container'>
+        <div class='topo content'>
+            <a href='@Url.Action("Index","Home")' class="logo">
+                <img src="~/img/logo_semletras.png" alt="Logo do software Ponto Digital" title="Ponto Digital">
+                <h1>Ponto Digital</h1>
+            </a>
+            <nav class='menu'>
+                <ul>
+                    @if(string.IsNullOrEmpty(admin))
+                    {
+                        <li><a href='@Url.Action("Planos","Home")'>Conheça nossos planos</a></li>
+                        <li><a href='@Url.Action("ComoFunciona","Home")'>Como funciona?</a></li>
+                        <li><a href='@Url.Action("Avaliacoes","Comentario")'>Avaliações</a></li>
+                        <li><a href='@Url.Action("QuemSomos","Home")'>Quem Somos</a></li>
+                        <li><a href='@Url.Action("Contato","Home")'>Contato</a></li>
+                        <li><a href='@Url.Action("Faq","Home")'>FAQ</a></li>
+                    
+                        @if (!string.IsNullOrEmpty(user))
+                        {
+                            <li><a href='@Url.Action("CadastrarComentario","Comentario")'>Avalie-nos</a></li>
+                            <li><a href='@Url.Action("ExibirPerfil","Usuario")' id="perfil">@user</a></li>
+                            <li><a href='@Url.Action("FazerLogout","Usuario")' id="login">Sair</a></li>
+                        }else
+                        {
+                            <!-- <li><a href='@Url.Action("Index","Usuario")'>Cadastre-se</a> -->
+                            <li><a href='@Url.Action("Login","Usuario")' id="login">Login</a></li>
+                        }
+                    } else
+                    {
+                        <li><a href='@Url.Action("Index","Administrador")'><b>Dashboard</b></a></li>
+                        <li><a href='@Url.Action("AprovarComentarios","Administrador")'>Aprovar comentários</a></li>
+                        <li><a href='@Url.Action("CadastrarAdministrador","Administrador")'>Cadastrar administrador</a></li>
+                        <li><a href='@Url.Action("ExibirUsuarios","Administrador")'>Ver lista de usuários</a></li>
+                        <li><a href='@Url.Action("FazerLogout","Administrador")' id="login">Sair</a></li>
+                    }
+                    
+                </ul>
+            </nav>
+            <button id="btn_menu"><img src="~/img/menu.png" alt="Menu"></button>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class='container'>
+        <div class="content">
+            <h3>Agora Vai - Ponto Digital</h3>
+            <div class="footer_flex">
+                <address>
+                    <div id="facebook">
+                        <img src="~/img/facebook.png" alt="Ícone do Facebook">
+                        <p>/pontodigital.com</p>
+                    </div>
+                    <div>
+                        <img src="~/img/location.png" alt="Ícone de indicação de localização">
+                        Av. Paulista, 999 - Bela Vista, São Paulo - SP
+                    </div>
+                    <div id="telefone">
+                        <img src="~/img/telefone.png" alt="Ícone de um telefone">
+                        +55 11 9999 9999
+                    </div>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    @if (@ViewData["Title"].Equals("Perguntas frequentes | Ponto Digital"))
+    {
+        <script>
+            function btn1()
+            {
+                $("#p1").slideToggle();
+            }
+            function btn2()
+            {
+                $("#p2").slideToggle();
+            }
+            function btn3()
+            {
+                $("#p3").slideToggle();
+            }
+            function btn4()
+            {
+                $("#p4").slideToggle();
+            }
+            function btn5()
+            {
+                $("#p5").slideToggle();
+            }
+            function btn6()
+            {
+                $("#p6").slideToggle();
+            }
+            function btn7()
+            {
+                $("#p7").slideToggle();
+            }
+            function btn8()
+            {
+                $("#p8").slideToggle();
+            }
+            function btn9()
+            {
+                $("#p9").slideToggle();
+            }
+        </script>            
+    }
+</body>

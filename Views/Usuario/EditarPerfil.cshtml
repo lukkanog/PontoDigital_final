@@ -1,0 +1,36 @@
+@model PontoDigital_final.ViewModels.UsuarioViewModel
+@{
+    ViewData["Title"] = "Editar Perfil | Ponto Digital";
+    ViewData["css"] = "faleconosco-style.css";
+}
+<main class="container">
+        <div class="content">
+            <h2>@ViewData["Mensagem"]</h2>
+            <form action='@Url.Action("EditarPerfil","Usuario")' method="POST">
+                <div class="campo">
+                    <input type="text" name="nome" placeholder="Nome" maxlength="50"  value="@Model.Usuario.Nome" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="telefone" placeholder="Número de telefone" maxlength="12" value="@Model.Usuario.Telefone" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="endereco" placeholder="Seu Endereço" maxlength="70" value="@Model.Usuario.Endereco" required>
+                </div>
+                <div class="campo">
+                <input type="date" name="data-nascimento" placeholder="Data de Nascimento" value="@Model.Usuario.DataNascimento">
+                </div>
+                <div class="campo">
+                    <input type="text" name="empresa" placeholder="Empresa" maxlength="50" value="@Model.Usuario.Empresa.Nome" required>
+                </div>
+                <div class="campo">
+                    <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" value="@Model.Usuario.Empresa.Cnpj" required>
+                </div>
+                <div class="campo">
+                    <label for="foto">Foto de Perfil</label>
+                    <input type="file" name="foto" id="foto-campo">
+                </div>
+
+                <input type="submit" value="Salvar alterações" class="submit">
+            </form>
+        </div>
+    </main>

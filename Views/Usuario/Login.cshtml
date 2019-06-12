@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Login | Ponto Digital";
+    ViewData["css"] = "login-style.css";
+}
+<main class="container">
+    <div class="content">
+        <h2>Entrar</h2>
+        <form action='@Url.Action("FazerLogin","Usuario")' method="POST">
+            <input type="email" name="email" placeholder="Email" maxlength="40" required>
+            <input type="password" name="senha" placeholder="Senha" minlength="8" maxlength="20" required>
+            <input type="submit" value="Entrar" name="entrar" id="submit">
+        </form>
+        <a id="irParaCadastro" href='@Url.Action("Index","Usuario")'>Ainda não tem uma conta? Cadastre-se</a>
+        <a href='@Url.Action("Login","Administrador")' class="link">Entrar como administrador</a>
+    </div>
+</main>

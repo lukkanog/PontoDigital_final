@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Cadastrar administrador | Ponto Digital";
+    ViewData["css"] = "faleconosco-style.css";
+}
+<main>
+    <h2>Cadastrar novo administrador</h2>
+    <form action='@Url.Action("CadastrarAdministrador","Administrador")' method="POST">
+        <div class="campo">
+            <input type="text" name="nome" placeholder="Nome" maxlength="50" required>
+        </div>
+        <div class="campo">
+            <input type="text" name="setor" placeholder="Setor" maxlength="20" required>
+        </div>
+        <div class="campo">
+            <input type="text" name="telefone" placeholder="Número de telefone" maxlength="12" required>
+        </div>
+        <div class="campo">
+            <input type="email" name="email" maxlength="50" id="email" placeholder="Email" required>
+        </div>
+        <div class="campo">
+            <input type="text" name="endereco" placeholder="Seu Endereço" maxlength="70" required>
+        </div>
+        <div class="campo">
+            <input type="date" name="data-nascimento" placeholder="Data de Nascimento" required>
+        </div>
+        <div class="campo">
+            <input type="password" name="senha" placeholder="Nova Senha" required minlength="8" maxlength="40">
+        </div>
+        <div class="campo">
+            <input type="password" name="confirmarsenha" placeholder="Confirmar Senha" required minlength="8" maxlength="40">
+        </div>
+        <input type="submit" value="Cadastrar" class="submit">
+    </form>
+</main>

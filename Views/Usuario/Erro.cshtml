@@ -1,0 +1,15 @@
+@model PontoDigital_final.ViewModels.ErroViewModel
+@{
+    ViewData["Title"] = "Erro | Ponto Digital";
+    ViewData["css"] = "erro-style.css";
+    //Model.Mensagem = (string)TempData["erro"];
+}
+<main class="container">
+    <div class="content">
+        <h2>Erro</h2>
+        <h3>Descrição do erro:</h3>
+        <!-- <p>@TempData["erro"]</p> -->
+        <p>@Model.Mensagem</p>
+        <a href=@Model.LinkVoltar>Voltar</a>
+    </div>
+</main>

@@ -1,0 +1,26 @@
+@model PontoDigital_final.ViewModels.UsuarioViewModel
+@{
+    ViewData["Title"] = "Perfil | Ponto Digital";
+    ViewData["css"] = "perfil-style.css";
+}
+<main class="container">
+    <div class="content">
+
+        <h2>@Model.Usuario.Nome</h2>
+        <div class="dados-perfil">
+            <div>
+                <p>Endereço: @Model.Usuario.Endereco</p>
+                <p>Telefone: @Model.Usuario.Telefone</p>
+                <p>Data de nascimento: @Model.Usuario.DataNascimento.ToShortDateString()</p>
+                <p>Empresa: @Model.Usuario.Empresa.Nome</p>
+                <p>CNPJ da empresa: @Model.Usuario.Empresa.Cnpj</p>
+            </div>
+            
+            <div id="flex-coluna">
+                <p>Foto de perfil:</p>
+                <img src="~/img/usuario_defaultpicture.png" alt="Sem foto de perfil definida" id="foto_perfil">
+                <a href='@Url.Action("EditarPerfil","Usuario")' class="link">Editar Perfil</a>
+            </div>
+        </div>
+    </div>
+</main>

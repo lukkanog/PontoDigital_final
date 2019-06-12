@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="http://typodermicfonts.com/sui-generis/">
+    <link rel="icon" href="img/logo_semletras.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script> 
+    $(document).ready(function(){
+      $("#btn_menu").click(function(){
+        $(".menu").slideToggle("fast");
+      });
+    });
+    </script>
+</head>
+<body>
+    <header class='topo container'>
+        <div class='topo content'>
+            <a href="index.html" class="logo">
+                <img src="img/logo_semletras.png" alt="Logo do software Ponto Digital" title="Ponto Digital">
+                <h1>Ponto Digital</h1>
+            </a>
+            <nav class='menu'>
+                <ul>
+                    <li><a href="planos.html">Conheça nossos planos</a></li>
+                    <li><a href="como-funciona.html">Como funciona?</a></li>
+                    <li><a href="avaliações.html">Avaliações</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li><a href="login.html" id="login">Login</a></li>
+                </ul>
+            </nav>
+            <button id="btn_menu"><img src="img/menu.png" alt="Menu"></button>
+        </div>
+    </header>
+    <main>
+        <section class='banner container'>
+            <div class='banner content'>
+                <img src="img/logo.png" alt="Logo do Software Ponto DIgital" title="Ponto Digital">
+                <p>Agora você pode gerenciar o tempo de trabalho da sua empresa em qualquer lugar! <a href="cadastro.html">Cadastre-se já!</a> </p>
+            </div>
+        </section>
+        <section class='caracteristicas container'>
+            <div class="caracteristicas content">
+                <div id="telas">
+                    <div class="titulo_e_texto">
+                        <h2>Gestão com confiança na palma da sua mão!</h2>
+                        <p>
+                            O Ponto Digital permite que todos os colaboradores batam o ponto via web de forma rápida e segura. Com isso, tanto os colaboradores que estão no escritório quanto aqueles que estão trabalhando externamente (ex: vendedores) conseguem fazer o seu controle de ponto online. Você pode liberar que o ponto seja registrado em qualquer lugar, apenas no wi-fi da própria empresa ou até mesmo em um único computador ou tablet no escritório! 
+                        </p>
+                    </div>
+                        <img src="img/telas.png" alt="Telas do software Ponto Digital em versão Web e Mobile">
+                    </div>
+                <div id="brasil">
+                    <img src="img/brasil.png" alt="Ícone do Brasil com uma empresa no centro e trabalhadores espalhados pelo território">
+                    <div class="titulo_e_texto">
+                        <h2>Controle de frequência de colaboradores dentro e fora da empresa</h2>
+                        <p> 
+                            O Ponto Digital permite que todos os colaboradores batam o ponto via web de forma rápida e segura. Com isso, tanto os colaboradores que estão no escritório quanto aqueles que estão trabalhando externamente (ex: vendedores) conseguem fazer o seu controle de ponto online. Você pode liberar que o ponto seja registrado em qualquer lugar, apenas no wi-fi da própria empresa ou até mesmo em um único computador ou tablet no escritório! 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="funcionalidades container">
+            <div class="funcionalidades content">
+                    <h2>Funcionalidades</h2>
+                <div class='coluna'>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>Controle de hora extra</p>
+                    </div>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>Relatórios diários</p>
+                    </div>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>100% dentro da lei</p>
+                    </div>
+                </div>
+                <div class='coluna'>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>Lançamento de atestado</p>
+                    </div>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>Localização em tempo real</p>
+                    </div>
+                    <div class="tique">
+                        <img src="img/tique.png" alt=""><p>Recursos antifraude</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="planos container">
+            <div class="planos content">
+                <div>
+                    <h2>Faça o teste de graça!</h2>
+                    <p>Conheça nosso produto de forma totalmente gratuíta por 30 dias e decida o melhor para sua empresa. </p>
+                </div>
+                <a href="planos.html">Comece o teste agora mesmo!</a>
+            </div>
+        </section>
+    </main>
+    <footer class='container'>
+        <div class="content">
+            <h3>Agora Vai - Ponto Digital</h3>
+            <div class="footer_flex">
+                <address>
+                <div id="facebook">
+                    <img src="img/facebook.png" alt="Ícone do Facebook">
+                    <p>/pontodigital.com</p>
+                </div>
+                    <div>
+                        <img src="img/location.png" alt="Ícone de indicação de localização">
+                        Av. Paulista, 999 - Bela Vista, São Paulo - SP
+                    </div>
+                    <div id="telefone">
+                        <img src="img/telefone.png" alt="Ícone de um telefone">
+                        +55 11 9999 9999
+                    </div>
+                </address>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
