@@ -1,7 +1,7 @@
 @model PontoDigital_final.ViewModels.ComentarioViewModel
 @{
     ViewData["Title"] = "Comentarios | Ponto Digital";
-    ViewData["css"] = "avaliações-style.css";
+    ViewData["css"] = "aprovar_comentarios-style.css";
 }
 
 <main>
@@ -11,11 +11,24 @@
     } else 
     {
         <h2>Comentarios feitos</h2>
+
+        <!-- <form method="POST" action='@Url.Action("FiltrarResultados","Administrador")'>
+            <label for="status">Filtrar por aprovados/não aprovados</label><b>
+            <select>
+                <option value="" disabled selected>Todos</option>
+                <option value="True">Aprovados</option>
+                <option value="False">Não aprovados</option>
+            </select>
+            <label for="data">Filtrar por Data</label><b>
+            <input type="date" name="data" id="data">
+            <input type="submit" value="Filtrar">
+        </form> -->
+
         @foreach (var comentario in Model.ListaDeComentarios)
         {
             <div class="pessoa">
                     <img src="~/img/usuario_defaultpicture.png" alt="Foto de Perfil">/
-                    <div class="texto">
+                    <div class="texto" id="@comentario.Id">
                         <h3>Autor: @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
                         <p>Comentario feito em: @comentario.DataDoComentario</p>
                         <h4>Assunto : @comentario.Assunto</h4>

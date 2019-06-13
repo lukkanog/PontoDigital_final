@@ -50,8 +50,8 @@
                     
                         @if (!string.IsNullOrEmpty(user))
                         {
-                            <li><a href='@Url.Action("CadastrarComentario","Comentario")'>Avalie-nos</a></li>
-                            <li><a href='@Url.Action("ExibirPerfil","Usuario")' id="perfil">@user</a></li>
+                            <li><a href='@Url.Action("CadastrarComentario","Comentario")'>Avalie - nos</a></li>
+                            <li><a href='@Url.Action("ExibirPerfil","Usuario")' id="perfil">@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(user)</a></li>
                             <li><a href='@Url.Action("FazerLogout","Usuario")' id="login">Sair</a></li>
                         }else
                         {
@@ -61,7 +61,7 @@
                     } else
                     {
                         <li><a href='@Url.Action("Index","Administrador")'><b>Dashboard</b></a></li>
-                        <li><a href='@Url.Action("AprovarComentarios","Administrador")'>Aprovar comentários</a></li>
+                        <li><a href='@Url.Action("AprovarComentarios","Administrador")'>Gerenciar comentários</a></li>
                         <li><a href='@Url.Action("CadastrarAdministrador","Administrador")'>Cadastrar administrador</a></li>
                         <li><a href='@Url.Action("ExibirUsuarios","Administrador")'>Ver lista de usuários</a></li>
                         <li><a href='@Url.Action("FazerLogout","Administrador")' id="login">Sair</a></li>

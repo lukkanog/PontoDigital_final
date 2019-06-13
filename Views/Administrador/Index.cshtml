@@ -1,26 +1,48 @@
 @model PontoDigital_final.ViewModels.AdministradorViewModel
 @{
     ViewData["Title"] = "Administrador | Ponto Digital";
-    ViewData["css"] = "login-style.css";
+    ViewData["css"] = "dashboard-style.css";
 }
 
 <main>
     @if (Model != null)
     {
-        <h2>Seja bem vindo,@Model.Nome</h2>
+        <h2>Seja bem vindo, @Model.Nome</h2>
     } else {
         <h2>Seja bem vindo, administrador!</h2>
     }
 
-    <div class="links">
-        <a href='@Url.Action("AprovarComentarios","Administrador")'>Aprovar comentários</a>
-        <a href='@Url.Action("CadastrarAdministrador","Administrador")'>Cadastrar novo administrador</a>
-        <a href='@Url.Action("ExibirUsuarios","Administrador")'>Ver lista de usuários</a>
-    </div>
-    <div class="infos">
-        <p><b>Usuários cadastrados:</b> @Model.ListaDeUsuarios.Count</p>
-        <p><b>Depoimentos cadastrados:</b> @Model.ListaDeComentarios.Count</p>
-        <p><b>Depoimentos aprovados:</b> @Model.ComentariosAprovados</p>
-        <p><b>Depoimnetos reprovados::</b> @Model.ComentariosRecusados</p>
+    <div class="flex-me">
+        <div class="links">
+            <a href='@Url.Action("AprovarComentarios","Administrador")'>Gerenciar comentários</a>
+            <a href='@Url.Action("CadastrarAdministrador","Administrador")'>Cadastrar novo administrador</a>
+            <a href='@Url.Action("ExibirUsuarios","Administrador")'>Ver lista de usuários</a>
+        </div>
+        <div class="infos">
+            <h3>Informações</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuários Cadastrados</th>
+                        <th>Depoimentos cadastrados</th>
+                        <th>Depoimentos aprovados</th>
+                        <th>Depoimentos não aprovados</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td>@Model.ListaDeUsuarios.Count</td>
+                        <td>@Model.ListaDeComentarios.Count</td>
+                        <td>@Model.ComentariosAprovados</td>
+                        <td>@Model.ComentariosRecusados</td>
+                    </tr>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+            <!-- <p><b>Usuários cadastrados:</b> @Model.ListaDeUsuarios.Count</p>
+            <p><b>Depoimentos cadastrados:</b> @Model.ListaDeComentarios.Count</p>
+            <p><b>Depoimentos aprovados:</b> @Model.ComentariosAprovados</p>
+            <p><b>Depoimnetos reprovados::</b> @Model.ComentariosRecusados</p>
+        </div> -->
     </div>
 </main>

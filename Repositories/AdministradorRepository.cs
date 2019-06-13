@@ -8,6 +8,7 @@ namespace PontoDigital_final.Repositories
     public class AdministradorRepository
     {
         UsuarioRepository usuarioRepositorio = new UsuarioRepository();
+        ComentarioRepository comentarioRepositorio = new ComentarioRepository();
         private const string PATH = "Database/Administradores.csv";
         public void Inserir(Administrador adm)
         {
@@ -100,6 +101,50 @@ namespace PontoDigital_final.Repositories
                 } 
             }
             return null;
+        }
+
+        public List<Comentario> Filtrar(DateTime data)
+        {
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in comentarioRepositorio.Listar())
+            {
+                if (item.DataDoComentario.ToShortDateString().Equals(data.ToShortDateString()))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(bool estaAprovado)
+        {
+            var valor = estaAprovado;
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in comentarioRepositorio.Listar())
+            {
+                if (item.EstaAprovado == valor)
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(bool estaAprovado, DateTime data)
+        {
+            var valor = estaAprovado;
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in comentarioRepositorio.Listar())
+            {
+                if (item.EstaAprovado == valor && item.DataDoComentario.ToShortDateString().Equals(data.ToShortDateString()))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
         }
 
 

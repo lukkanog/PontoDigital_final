@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\46735197879\\Desktop\\lucas\\WebMvc\\PontoDigital_final\\PontoDigital_final.csproj",
+      "projectUniqueName": "C:\\Users\\46735197879\\Desktop\\PontoDigital_final\\PontoDigital_final.csproj",
       "projectName": "PontoDigital_final",
-      "projectPath": "c:\\Users\\46735197879\\Desktop\\lucas\\WebMvc\\PontoDigital_final\\PontoDigital_final.csproj",
+      "projectPath": "C:\\Users\\46735197879\\Desktop\\PontoDigital_final\\PontoDigital_final.csproj",
       "packagesPath": "C:\\Users\\46735197879\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\46735197879\\Desktop\\lucas\\WebMvc\\PontoDigital_final\\obj\\",
+      "outputPath": "C:\\Users\\46735197879\\Desktop\\PontoDigital_final\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

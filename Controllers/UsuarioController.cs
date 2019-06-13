@@ -24,12 +24,10 @@ namespace PontoDigital_final.Controllers
         [HttpPost]
         public IActionResult CadastrarUsuario(IFormCollection form)
         {
-            DateTime data = DateTime.Parse(form["data-nascimento"]);
+            DateTime data = DateTime.Parse(form["dataNascimento"]);
             if (!form["senha"].Equals(form["confirmarsenha"]))
             {
                 ErroViewModel erroViewModel = new ErroViewModel();
-                // erroViewModel.Mensagem = "Por favor, confirme sua senha corretamente.";
-                // erroViewModel.LinkVoltar = "/Usuario/Index";
                 TempData["erro"] = "Por favor, confirme sua senha corretamente.";
                 TempData["voltar"] = "/Usuario/Index";
                 return View("_Erro",erroViewModel);
@@ -48,7 +46,7 @@ namespace PontoDigital_final.Controllers
                 usuario.Email = form["email"];
                 usuario.Endereco = form["endereco"];
                 usuario.Genero = form["genero"];
-                usuario.DataNascimento = DateTime.Parse(form["data-nascimento"]);
+                usuario.DataNascimento = DateTime.Parse(form["dataNascimento"]);
                 usuario.Senha = form["senha"];
 
 
@@ -87,12 +85,13 @@ namespace PontoDigital_final.Controllers
                 if (!emailJaExiste)
                 {
                     usuarioRepositorio.Inserir(usuario);
-                    return RedirectToAction ("Index","Home");
+                    var sucessoViewModel = new SucessoViewModel();
+                    TempData["sucesso"] = "Usuário cadastrado com sucesso!";
+                    TempData["voltar"] = "/Home/Index";
+                    return View("_Sucesso",sucessoViewModel);
                 } else
                 {
                     ErroViewModel erroViewModel = new ErroViewModel();
-                    // erroViewModel.Mensagem = "Esse email já está sendo utilizado.";
-                    // erroViewModel.LinkVoltar = "/Usuario/Index/";
                     TempData["erro"] = "Esse email já está sendo utilizado.";
                     TempData["voltar"] = "/Usuario/Index";
                     return View("_Erro",erroViewModel);
@@ -113,6 +112,7 @@ namespace PontoDigital_final.Controllers
                 TempData["voltar"] = "/Home/Index";
                 return View("_Erro",erroViewModel);
             }
+
             return View();
         }
 
@@ -130,6 +130,7 @@ namespace PontoDigital_final.Controllers
                 string primeiroNome = usuarioNomes[0];
                 HttpContext.Session.SetString(SESSION_EMAIL, email);
                 HttpContext.Session.SetString(SESSION_USUARIO, primeiroNome);
+                
                 return RedirectToAction("Index","Home");
             } else 
             {
@@ -180,12 +181,12 @@ namespace PontoDigital_final.Controllers
             usuario.Email = form["email"];
             usuario.Endereco = form["endereco"];
 
-            if (string.IsNullOrEmpty(form["data-nascimento"]))
+            if (string.IsNullOrEmpty(form["dataNascimento"]))
             {
                 usuario.DataNascimento = usuarioAntigo.DataNascimento;
             } else
             {
-                usuario.DataNascimento = DateTime.Parse(form["data-nascimento"]);
+                usuario.DataNascimento = DateTime.Parse(form["dataNascimento"]);
             }
             
             Empresa empresa = new Empresa();

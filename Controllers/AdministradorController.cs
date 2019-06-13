@@ -161,10 +161,51 @@ namespace PontoDigital_final.Controllers
             } else 
             {
                 ComentarioViewModel comentarioViewModel = new ComentarioViewModel();
-                comentarioViewModel.ListaDeComentarios =  comentarioRepositorio.Listar();
+
+                if (TempData["lista"] == null)
+                {
+                    comentarioViewModel.ListaDeComentarios =  comentarioRepositorio.Listar();
+                }
+                else
+                {
+                    comentarioViewModel.ListaDeComentarios =  (List<Comentario>)TempData["lista"];
+                }
                 return View(comentarioViewModel);
             }
         }
+
+        // [HttpPost]
+        // public IActionResult FiltrarResultados(IFormCollection form)
+        // {
+
+        //     if (string.IsNullOrEmpty(form["data"]) && string.IsNullOrEmpty(form["status"]))
+        //     {
+        //         return RedirectToAction("AprovarComentarios");
+        //     }
+
+        //     ViewBag.Admin = HttpContext.Session.GetString(SESSION_ADMIN);
+        //     // var comentarioViewModel = new ComentarioViewModel();
+            
+
+
+        //     if (string.IsNullOrEmpty(form["data"]))
+        //     {
+        //         var status = bool.Parse(form["status"]);
+        //         TempData["lista"] = administradorRepositorio.Filtrar(status);
+        //     } else if (string.IsNullOrEmpty(form["status"]))
+        //     {
+        //         var data = DateTime.Parse(form["data"]);
+        //         TempData["lista"] = administradorRepositorio.Filtrar(data);
+        //     } else
+        //     {
+        //         var data = DateTime.Parse(form["data"]);
+        //         var status = bool.Parse(form["status"]);
+
+        //         TempData["lista"] = administradorRepositorio.Filtrar(status,data);
+        //     }
+            
+        //     return RedirectToAction("AprovarComentarios");
+        // }
 
 
   

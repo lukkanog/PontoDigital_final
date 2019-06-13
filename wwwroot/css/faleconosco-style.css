@@ -2,6 +2,7 @@ main{
     background-color:#097bb2;
     height: calc(100vh - 4em);
     padding:auto;
+    font-family: "Comfortaa",cursive,sans-serif
 }
 h2{
     color:#fff;
@@ -57,6 +58,12 @@ label{
 #mensagem{
     height:80px;
     
+}
+.genero{
+    width:110%;
+    border:2px solid #f2a500;
+    border-radius:10px;
+    padding:0.5em 1em;
 }
 
 
