@@ -4,33 +4,49 @@
     ViewData["css"] = "aprovar_comentarios-style.css";
 }
 
-<main>
+<main class="container">
+    <div class="content">
+
+    
     @if (Model.ListaDeComentarios.Count == 0)
     {
         <h2>Resultado não encontrado</h2>
         <form method="POST" action='@Url.Action("FiltrarResultados","Administrador")'>
-            <label for="data">Filtrar por Data</label><b>
-            <input type="date" name="data" id="data">
-            <input type="submit" value="Filtrar">
-        </form>
+                <div class="campo">
+                    <label for="id">Filtrar por ID do comentário</label>
+                    <input type="text" name="id" placeholder="ID do comentário">
+                </div>
+                <div class="campo">
+                    <label for="data">Filtrar por Data</label>
+                    <input type="date" name="data" id="data">
+                </div>
+                <input type="submit" value="Filtrar">
+            </form>
     } else 
     {
         <h2>Resultados filtrados</h2>
 
-         <form method="POST" action='@Url.Action("FiltrarResultados","Administrador")'>
-            <label for="data">Filtrar por Data</label><b>
-            <input type="date" name="data" id="data">
-            <input type="submit" value="Filtrar">
-        </form>
+        <form method="POST" action='@Url.Action("FiltrarResultados","Administrador")'>
+                <div class="campo">
+                    <label for="id">Filtrar por ID do comentário</label>
+                    <input type="text" name="id">
+                </div>
+                <div class="campo">
+                    <label for="data">Filtrar por Data</label>
+                    <input type="date" name="data" id="data">
+                </div>
+                <input type="submit" value="Filtrar">
+            </form>
 
         @foreach (var comentario in Model.ListaDeComentarios)
         {
             <div class="pessoa">
-                <img src="~/img/usuario_defaultpicture.png" alt="Foto de Perfil">/
+                <img src="@comentario.Autor.UrlFoto" alt="Foto de Perfil">
                 <div class="texto">
-                    <h3>Autor: @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
-                    <p>Comentario feito em: @comentario.DataDoComentario</p>
-                    <h4>Avaliação : @comentario.Assunto</h4>
+                    <p><b>ID:</b> @comentario.Id</p>
+                    <p><b>Autor:</b> @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</p>
+                    <p><b>Comentario feito em:</b> @comentario.DataDoComentario</p>
+                    <p><b>Avaliação:</b> @comentario.Assunto</p>
                     <p>@comentario.Mensagem</p>
                     @if (comentario.EstaAprovado == false)
                     {
@@ -43,6 +59,6 @@
                     
             </div>        
         }
-
     }
+    </div>
 </main>

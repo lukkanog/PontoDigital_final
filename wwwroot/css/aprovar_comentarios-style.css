@@ -3,12 +3,6 @@ main{
     font-family: 'Comfortaa', cursive, sans-serif;
     padding-bottom:2em;
 }
-h2{
-    font-size:3em;
-    text-align:center;
-    padding:1em;
-    color:#FFF;
-}
 main .content{
     display:flex;
     flex-flow:column;
@@ -20,8 +14,29 @@ h2{
     padding:1.5em 0;
     font-size:3em;
 }
+form{
+    display:flex;
+    color:#fff;
+}
+.campo{
+    padding:0 1em;
+    display:flex;
+    flex-flow:column;
+}
+form [type="submit"]{
+    font-family: 'Comfortaa', cursive;
+    color:#fff;
+    background-color:#f2a620;
+    padding:1em;
+    border:0.1em solid #f2a620;
+    border-radius:1em;
+}
+label{
+    margin:0.2em 0;
+}
 .pessoa{
     width:80%;
+    color:#000000;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -29,10 +44,13 @@ h2{
     background-color:#fff;
     border:3px solid #ffa500;
     border-radius:30px;
+    padding:1.5em 0;
 }
 .pessoa img{
     height:300px;
     width:300px;
+    object-fit: cover;
+    object-position: center;
     border:3px solid #ffa500;
     border-radius:25px 0 0 25px;
 }
@@ -63,4 +81,91 @@ h2{
 main a:hover{
     background-color:#59C9FE;
     text-shadow:1px 1.5px 50px #000,-1px -1.5px 50px #000;
+}
+
+@media screen and (max-width:1366px){
+    h2{
+        padding:0.5em 0 1em 0;
+        font-size:2.8em;
+    }
+    .pessoa{
+        width:95%;
+        margin:1em auto;
+    }
+    .pessoa img{
+        height:250px;
+        width:250px;
+    }
+    .texto h3{
+        font-size:1.8em;
+    }
+    .texto p{
+        font-size:1.2em;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    h2{
+        font-size:2em;
+        padding:2em 0 1em 0;
+    }
+    .pessoa{
+        border-radius:15px;
+        margin:0.5em auto;
+        width:100%;
+    }
+    .pessoa img{
+        height:150px;
+        width:150px;
+        border-radius:10px 0 0 10px;
+    }
+    .texto h3{
+        font-size:1em;
+    }
+    .texto p{
+        font-size:0.85em;
+    }
+    main a{
+        font-size:1em;
+        margin-top:0.5em;
+    }
+    form{
+        flex-flow:column;
+        width:50%;
+        margin:auto;
+    }
+    form [type="submit"]{
+        margin:1em 0 2em 0;
+        padding:0.2em;
+        border:0.1em solid #f2a620;
+        border-radius:1em;
+    }
+    .texto a{
+        font-size:1em;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    h2{
+        font-size:1.5em;
+    }
+    .pessoa{
+        flex-flow:column;
+        background-color:#097bb2;
+        color:#fff;
+        padding:1em;
+        width:90%;
+    }
+    .pessoa .texto{
+        width:100%;
+    }
+    .pessoa img{
+        border-radius:15px;
+        margin-bottom:1em;
+    }
+    form{
+        width:100%;
+    }
 }

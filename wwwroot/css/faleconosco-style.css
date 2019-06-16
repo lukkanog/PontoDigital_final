@@ -1,13 +1,14 @@
 main{
     background-color:#097bb2;
     height: calc(100vh - 4em);
-    padding:auto;
-    font-family: "Comfortaa",cursive,sans-serif
+    
+    font-family: "Comfortaa",cursive,sans-serif;
 }
 h2{
     color:#fff;
     font-size:3em;
     padding-top:1em;
+    margin-top:2em;
     text-align: center;
 }
 form{
@@ -16,7 +17,7 @@ form{
     margin:auto;
     width:40%;
     color:#fff;
-    padding:5em 0 7em 0;
+    padding:3em 0 7em 0;
 }
 form input{
     width:100%;
@@ -52,24 +53,39 @@ form [type="submit"]{
     padding:0.5em 0;
 }
 label{
-    font-size:1.5em;
+    font-size:1.2em;
     display: block;
+    margin-bottom:0.2em;
 }
 #mensagem{
-    height:80px;
-    
+    height:1em;
 }
-.genero{
-    width:110%;
+textarea{
+    border:2px solid #f2a500;
+    font-family: "calibri";
+    font-size:1em;
+    padding:0.5em 1em;
+    min-width: 100%;
+    max-width: 100%;
+    min-height:4em;
+    max-height:7em;
+    border-radius:10px;
+}
+select{
+    font-family: "Comfortaa",cursive,sans-serif;
     border:2px solid #f2a500;
     border-radius:10px;
-    padding:0.5em 1em;
+    width:106%;
+    padding: 0.5em 1em;
 }
+
 
 
 @media screen and (max-width:1366px){
     h2{
-        padding-top:3em;
+        padding-top:1em;
+        margin-top:1em;
+        text-align: center;
     }
     main{
         height: calc(100vh - 4em);

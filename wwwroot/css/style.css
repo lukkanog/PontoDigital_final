@@ -10,6 +10,7 @@
 
 main{
     padding-top:4em;
+    min-height: calc(100vh - 4em);
 }
 .container{
     width:100%;
@@ -34,12 +35,13 @@ header{
     display:flex;
     list-style-type: none;
     justify-content: space-evenly;
-    width:90%;
+    width:100%;
 }
 .menu ul a{
     text-decoration:none;
     color:#004;
-    padding:1.5em 1.4em;
+    padding:1.5em;
+    font-size:1em;
 }
 .menu ul a:hover{
     background-color:#BF8319;
@@ -66,7 +68,7 @@ header{
 h1{
     padding:1em;
     font-family: 'SuiGeneris',comic, sans-serif;
-    font-size:1.2em;
+    font-size:2em;
     color:	#005BB5;
     font-weight:bolder;
 }
@@ -356,9 +358,7 @@ address div{
     .banner img{
         height:40%;
     }
-    .banner{
-        justify-content: space-around;
-    }
+    
     .banner p{
         width:45%;
         font-size:1.5em;

@@ -7,7 +7,7 @@
     <div class="content">
 
         <h2>@Model.Usuario.Nome</h2>
-        <div class="dados-perfil">
+        <div id="dados-perfil">
             <div>
                 <p>Endereço: @Model.Usuario.Endereco</p>
                 <p>Telefone: @Model.Usuario.Telefone</p>
@@ -18,7 +18,7 @@
             
             <div id="flex-coluna">
                 <p>Foto de perfil:</p>
-                <img src="~/img/usuario_defaultpicture.png" alt="Sem foto de perfil definida" id="foto_perfil">
+                <img src="@Model.Usuario.UrlFoto" alt="Foto de Perfil" id="foto_perfil">
                 <a href='@Url.Action("EditarPerfil","Usuario")' class="link">Editar Perfil</a>
             </div>
         </div>

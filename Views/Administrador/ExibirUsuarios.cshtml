@@ -14,7 +14,7 @@
         @foreach (var item in Model.ListaDeUsuarios)
         {
             <div class="pessoa">
-                <img src="~/img/usuario_defaultpicture.png" alt="Foto de perfil">
+                <img src="@item.UrlFoto" alt="Foto de perfil">
                 <div class="texto">
                     <p><b>Nome:</b> @item.Nome</p>
                     <p><b>Id:</b> @item.Id</p>

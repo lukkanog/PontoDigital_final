@@ -22,7 +22,7 @@ namespace PontoDigital_final.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarUsuario(IFormCollection form)
+        public IActionResult CadastrarUsuario(IFormCollection form,[FromForm] Usuario usuarioForm)
         {
             DateTime data = DateTime.Parse(form["dataNascimento"]);
             if (!form["senha"].Equals(form["confirmarsenha"]))
@@ -55,29 +55,35 @@ namespace PontoDigital_final.Controllers
                 empresa.Cnpj = form["cnpj"];
 
                 usuario.Empresa = empresa;
-
                 #region CADASTRO_DE_FOTOS
-                // if (usuario.foto != null && usuario.foto.Length > 0) 
-                // {
-                //     // Extrai apenas o nome do arquivo
-                //     var fileName = Path.GetFileName (usuario.foto.FileName);
+                if (usuarioForm.Foto != null && usuarioForm.Foto.Length > 0) 
+                {
+                    // Extrai apenas o nome do arquivo
+                    var fileName = Path.GetFileName (usuarioForm.Foto.FileName);
                     
-                //     // Define o nome do arquivo
-                //     var NomeArquivo = Guid.NewGuid ().ToString ().Replace ("-", "") + Path.GetExtension (fileName);
+                    // Define o nome do arquivo
+                    var NomeArquivo = Guid.NewGuid ().ToString ().Replace ("-", "") + Path.GetExtension (fileName);
 
                     
-                //     //Define um caminho para o arquivo
-                //     var CaminhoArquivo = Path.Combine (Directory.GetCurrentDirectory (), "wwwroot\\uploads\\imgs", NomeArquivo);
+                    //Define um caminho para o arquivo
+                    var CaminhoArquivo = Path.Combine (Directory.GetCurrentDirectory (), "wwwroot\\uploads\\imgs", NomeArquivo);
 
                     
-                //     using (var StreamImagem = new FileStream (CaminhoArquivo, FileMode.Create)) 
-                //     {
-                //         usuario.foto.CopyTo(StreamImagem);
-                //     }
+                    using (var StreamImagem = new FileStream (CaminhoArquivo, FileMode.Create)) 
+                    {
+                        usuarioForm.Foto.CopyTo(StreamImagem);
+                    }
 
-                //     usuarioCadastrar.UrlFoto = "/uploads/imgs/" + NomeArquivo;
-                // }
+                    usuario.UrlFoto = "/uploads/imgs/" + NomeArquivo;
+                } 
+                else
+                {
+                    usuario.UrlFoto = "/img/usuario_defaultpicture.png";
+                }
                 #endregion
+
+
+
 
 
                 bool emailJaExiste = usuarioRepositorio.VerificarEmailExistente(usuario.Email);
@@ -171,7 +177,7 @@ namespace PontoDigital_final.Controllers
         
 
         [HttpPost]
-        public IActionResult EditarPerfil(IFormCollection form)
+        public IActionResult EditarPerfil(IFormCollection form,[FromForm] Usuario usuarioForm)
         {
             Usuario usuarioAntigo = usuarioRepositorio.ObterUsuario(HttpContext.Session.GetString(SESSION_EMAIL));
             Usuario usuario = new Usuario();
@@ -188,6 +194,35 @@ namespace PontoDigital_final.Controllers
             {
                 usuario.DataNascimento = DateTime.Parse(form["dataNascimento"]);
             }
+
+             #region CADASTRO_DE_FOTOS
+                if (usuarioForm.Foto != null && usuarioForm.Foto.Length > 0) 
+                {
+                    // System.IO.File.Delete("wwwroot\\"+usuario.UrlFoto);
+                    
+                    // Extrai apenas o nome do arquivo
+                    var fileName = Path.GetFileName (usuarioForm.Foto.FileName);
+                    
+                    // Define o nome do arquivo
+                    var NomeArquivo = Guid.NewGuid ().ToString ().Replace ("-", "") + Path.GetExtension (fileName);
+
+                    
+                    //Define um caminho para o arquivo
+                    var CaminhoArquivo = Path.Combine (Directory.GetCurrentDirectory (), "wwwroot\\uploads\\imgs", NomeArquivo);
+
+                    
+                    using (var StreamImagem = new FileStream (CaminhoArquivo, FileMode.Create)) 
+                    {
+                        usuarioForm.Foto.CopyTo(StreamImagem);
+                    }
+
+                    usuario.UrlFoto = "/uploads/imgs/" + NomeArquivo;
+                } 
+                else
+                {
+                    usuario.UrlFoto = usuarioAntigo.UrlFoto;
+                }
+                #endregion
             
             Empresa empresa = new Empresa();
             empresa.Nome = form["empresa"];
@@ -196,7 +231,6 @@ namespace PontoDigital_final.Controllers
             usuario.Empresa = empresa;
 
             usuarioRepositorio.EditarUsuario(usuarioAntigo,usuario);
-            // return RedirectToAction("ExibirPerfil","Usuario");
             ViewBag.User = HttpContext.Session.GetString(SESSION_USUARIO);
             return RedirectToAction("ExibirPerfil","Usuario");
         }

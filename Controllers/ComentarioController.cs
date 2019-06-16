@@ -65,15 +65,7 @@ namespace PontoDigital_final.Controllers
             comentario.Assunto = form["assunto"];
             comentario.Mensagem = form["mensagem"];
             
-            comentario.Autor = new Usuario();
-            comentario.Autor.Nome = form["nome"];
-            comentario.Autor.Telefone = form["telefone"];
-            comentario.Autor.Email = form["email"];
-
-            comentario.Autor.Empresa = new Empresa();
-            comentario.Autor.Empresa.Nome = form["empresa"];
-            comentario.Autor.Empresa.Cnpj = form["cnpj"];
-
+            comentario.Autor = usuarioRepositorio.ObterUsuario((HttpContext.Session.GetString(SESSION_EMAIL)));
             comentarioRepositorio.Inserir(comentario);
 
             var sucessoViewModel = new SucessoViewModel();

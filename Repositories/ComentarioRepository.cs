@@ -7,8 +7,8 @@ namespace PontoDigital_final.Repositories
 {
     public class ComentarioRepository
     {
+        UsuarioRepository usuarioRepositorio = new UsuarioRepository();
         private const string PATH = "Database/Comentarios.csv";
-        private const string PATH_APROVADOS = "Database/ComentariosAprovados.csv";
         public void Inserir(Comentario comentario)
         {
             if (!File.Exists(PATH))
@@ -56,12 +56,19 @@ namespace PontoDigital_final.Repositories
                 comentario.Autor.Empresa.Nome = dados[7];
                 comentario.Autor.Empresa.Cnpj = dados[8];
                 comentario.EstaAprovado = bool.Parse(dados[9]);
+                comentario.Autor.UrlFoto = ObterFoto(comentario.Autor.Email);
+
 
                 listaDeComentarios.Add(comentario);
             }
             return listaDeComentarios;
         }
-
+        public List<Comentario> ListarAoContrario()
+        {
+            var lista = Listar();
+            lista.Reverse();
+            return lista;
+        }
         public void Excluir(int id)
         {
             string[] linhas = File.ReadAllLines(PATH);
@@ -149,6 +156,99 @@ namespace PontoDigital_final.Repositories
                 }
             }
             File.WriteAllLines(PATH,linhas);
+        }
+
+        
+        public List<Comentario> Filtrar(DateTime data)
+        {
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in Listar())
+            {
+                if (item.DataDoComentario.ToShortDateString().Equals(data.ToShortDateString()))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(bool estaAprovado)
+        {
+            bool valor;
+            if (estaAprovado == true)
+            {
+                valor = true;
+            } else
+            {
+                valor = false;
+            }
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in Listar())
+            {
+                if (item.EstaAprovado == valor)
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(bool estaAprovado, DateTime data)
+        {
+            var valor = estaAprovado;
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in Listar())
+            {
+                if (item.EstaAprovado == valor && item.DataDoComentario.ToShortDateString().Equals(data.ToShortDateString()))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(string id)
+        {
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in Listar())
+            {
+                if (item.Id.ToString().Equals(id))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public List<Comentario> Filtrar(string id, DateTime data)
+        {   
+            var listaNova = new List<Comentario>();
+
+            foreach (var item in Listar())
+            {
+                if (item.Id.ToString().Equals(id) && item.DataDoComentario.ToShortDateString().Equals(data.ToShortDateString()))
+                {
+                    listaNova.Add(item);
+                }
+            }
+            return listaNova;
+        }
+
+        public string ObterFoto(string email)
+        {
+            var listaDeUsuarios = usuarioRepositorio.Listar();
+            foreach (var item in listaDeUsuarios)
+            {
+                if (item!=null && item.Email.Equals(email))
+                {
+                    return item.UrlFoto;
+                }
+            }
+            return null;
         }
 
     }//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\   FIM  DA CLASSE  \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

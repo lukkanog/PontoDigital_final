@@ -148,11 +148,11 @@ namespace PontoDigital_final.Controllers
         [HttpGet]
         public IActionResult AprovarComentarios()
         {
-            AdministradorViewModel admViewModel = new AdministradorViewModel();
-            admViewModel.Nome = HttpContext.Session.GetString(SESSION_ADMIN);
+            // AdministradorViewModel admViewModel = new AdministradorViewModel();
+            // // admViewModel.Nome = HttpContext.Session.GetString(SESSION_ADMIN);
             ViewBag.Admin = HttpContext.Session.GetString(SESSION_ADMIN);
             
-            if (string.IsNullOrEmpty(admViewModel.Nome))
+            if (string.IsNullOrEmpty(ViewBag.Admin))
             {
                 ErroViewModel erroViewModel = new ErroViewModel();
                 TempData["erro"] = "Apenas administradores podem acessar essa pagina.";
@@ -161,51 +161,56 @@ namespace PontoDigital_final.Controllers
             } else 
             {
                 ComentarioViewModel comentarioViewModel = new ComentarioViewModel();
-
-                if (TempData["lista"] == null)
-                {
-                    comentarioViewModel.ListaDeComentarios =  comentarioRepositorio.Listar();
-                }
-                else
-                {
-                    comentarioViewModel.ListaDeComentarios =  (List<Comentario>)TempData["lista"];
-                }
+                comentarioViewModel.ListaDeComentarios =  comentarioRepositorio.ListarAoContrario(); 
                 return View(comentarioViewModel);
             }
         }
 
-        // [HttpPost]
-        // public IActionResult FiltrarResultados(IFormCollection form)
-        // {
+        [HttpPost]
+        public IActionResult FiltrarResultados(IFormCollection form)
+        {
 
-        //     if (string.IsNullOrEmpty(form["data"]) && string.IsNullOrEmpty(form["status"]))
-        //     {
-        //         return RedirectToAction("AprovarComentarios");
-        //     }
+            if (string.IsNullOrEmpty(form["data"]) && string.IsNullOrEmpty(form["id"]))
+            {
+                return RedirectToAction("AprovarComentarios");
+            }
 
-        //     ViewBag.Admin = HttpContext.Session.GetString(SESSION_ADMIN);
-        //     // var comentarioViewModel = new ComentarioViewModel();
+            ViewBag.Admin = HttpContext.Session.GetString(SESSION_ADMIN);
+            var comentarioViewModel = new ComentarioViewModel();
             
 
 
-        //     if (string.IsNullOrEmpty(form["data"]))
-        //     {
-        //         var status = bool.Parse(form["status"]);
-        //         TempData["lista"] = administradorRepositorio.Filtrar(status);
-        //     } else if (string.IsNullOrEmpty(form["status"]))
-        //     {
-        //         var data = DateTime.Parse(form["data"]);
-        //         TempData["lista"] = administradorRepositorio.Filtrar(data);
-        //     } else
-        //     {
-        //         var data = DateTime.Parse(form["data"]);
-        //         var status = bool.Parse(form["status"]);
+            if (string.IsNullOrEmpty(form["data"]))
+            {
+                var id = form["id"];
+                comentarioViewModel.ListaDeComentarios = comentarioRepositorio.Filtrar(id);
+            } else if (string.IsNullOrEmpty(form["status"]))
+            {
+                var data = DateTime.Parse(form["data"]);
+                comentarioViewModel.ListaDeComentarios = comentarioRepositorio.Filtrar(data);
+            } else
+            {
+                var data = DateTime.Parse(form["data"]);
+                var id = form["id"];
 
-        //         TempData["lista"] = administradorRepositorio.Filtrar(status,data);
-        //     }
+                comentarioViewModel.ListaDeComentarios = comentarioRepositorio.Filtrar(id,data);
+            }
+            return View("FiltrarResultados",comentarioViewModel);
+        }
+        [HttpGet]
+        public IActionResult FiltrarResultados()
+        {
+            ViewBag.Admin = HttpContext.Session.GetString(SESSION_ADMIN);
             
-        //     return RedirectToAction("AprovarComentarios");
-        // }
+            if (string.IsNullOrEmpty(ViewBag.Admin))
+            {
+                ErroViewModel erroViewModel = new ErroViewModel();
+                TempData["erro"] = "Apenas administradores podem acessar essa pagina.";
+                TempData["Voltar"] = "/Home/Index";
+                return View("_Erro",erroViewModel);
+            }
+            return View();
+        }
 
 
   

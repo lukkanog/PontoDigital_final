@@ -17,7 +17,7 @@ namespace PontoDigital_final.Models
         public string UrlFoto {get;set;}
         public IFormFile Foto {get;set;}
 
-        public Usuario()    {}
+        public Usuario(){}
 
         public Usuario(string nome,string endereco, string email, string telefone, string genero, DateTime dataNascimento, string nomeEmpresa,string cnpj, string senha)
         {
@@ -32,9 +32,8 @@ namespace PontoDigital_final.Models
             this.Empresa = empresa;
         }
         
-        public Usuario(int id,string nome,string endereco, string email, string telefone, string genero, DateTime dataNascimento, string nomeEmpresa,string cnpj, string senha, string foto)
+        public Usuario(string nome,string endereco, string email, string telefone, string genero, DateTime dataNascimento, string nomeEmpresa,string cnpj, string senha, string foto)
         {
-            this.Id = id;
             this.Nome = nome;
             this.Email = endereco;
             this.Telefone = telefone;

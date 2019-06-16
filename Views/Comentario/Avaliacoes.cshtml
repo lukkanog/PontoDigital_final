@@ -10,7 +10,7 @@
             @foreach (var comentario in Model.ListaDeComentarios)
             {
                 <div class="pessoa">
-                    <img src="~/img/usuario_defaultpicture.png" alt="Foto de perfil">
+                    <img src="@comentario.Autor.UrlFoto" alt="Foto de perfil">
                     <div class="texto">
                         <h3>@comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
                         <h3>@comentario.Assunto</h3>

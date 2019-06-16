@@ -19,7 +19,7 @@ namespace PontoDigital_final.Repositories
             {
                 usuario.Id = quantLinhas + 1;
             }
-            string linha = $"{usuario.Id};{usuario.Nome.ToUpper()};{usuario.Endereco.ToUpper()};{usuario.Telefone};{usuario.Genero};{usuario.DataNascimento.ToShortDateString()};{usuario.Email};{usuario.Senha};{usuario.Empresa.Nome.ToUpper()};{usuario.Empresa.Cnpj}";
+            string linha = $"{usuario.Id};{usuario.Nome.ToUpper()};{usuario.Endereco.ToUpper()};{usuario.Telefone};{usuario.Genero};{usuario.DataNascimento.ToShortDateString()};{usuario.Email};{usuario.Senha};{usuario.Empresa.Nome.ToUpper()};{usuario.Empresa.Cnpj};{usuario.UrlFoto}";
             
             StreamWriter sw = new StreamWriter(PATH,true);
             sw.WriteLine(linha);
@@ -53,6 +53,8 @@ namespace PontoDigital_final.Repositories
                 Empresa empresa = new Empresa();
                 empresa.Nome = dados[8];
                 empresa.Cnpj = dados[9];
+
+                usuario.UrlFoto = dados[10];
 
                 usuario.Empresa = empresa;
                 listaDeUsuarios.Add(usuario);
@@ -138,7 +140,7 @@ namespace PontoDigital_final.Repositories
 
                 if (usuario.Id.ToString().Equals(linha[0]))
                 {
-                    linhas[i] = $"{usuario.Id};{usuario.Nome.ToUpper()};{usuario.Endereco.ToUpper()};{usuario.Telefone};{usuario.Genero};{usuario.DataNascimento.ToShortDateString()};{usuario.Email};{usuario.Senha};{usuario.Empresa.Nome};{usuario.Empresa.Cnpj}";
+                    linhas[i] = $"{usuario.Id};{usuario.Nome.ToUpper()};{usuario.Endereco.ToUpper()};{usuario.Telefone};{usuario.Genero};{usuario.DataNascimento.ToShortDateString()};{usuario.Email};{usuario.Senha};{usuario.Empresa.Nome.ToUpper()};{usuario.Empresa.Cnpj};{usuario.UrlFoto}";
                     break;
                 }
             }

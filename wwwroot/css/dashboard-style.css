@@ -35,7 +35,6 @@ h3{
     background-color:#F2A620;
     border:1px #f2a620;
     border-radius:0.6em;
-    
 }
 .links a:hover{
     background-color:#59C9FE;
@@ -58,4 +57,57 @@ h3{
 }
 .infos tbody{
     background-color:#f2a500bb;
+}
+
+@media screen and (max-width:1366px)
+{
+    h2{
+        font-size:2em;
+    }
+    .links a{
+        padding:0.5em 0.75em;
+        font-size:1.2em;
+    }
+    table{
+        max-width: 13em;
+    }
+    .infos td,th{
+        padding:0.5em;
+        border: 0.1em solid #f2a500;
+        border-radius: 0.2em;
+    }
+}
+
+@media screen and (max-width:768px)
+{
+    .flex-me{
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+    }
+    .links{
+        justify-content: space-evenly;
+        height:25vh;
+    }
+    
+}
+
+@media screen and (max-width:360px)
+{
+    .flex-me{
+        padding:2em 0;
+    }
+    .infos{
+        font-size:0.6em;
+    }
+    .infos td,th{
+        padding:0.3em;
+    }
+    .links a{
+        font-size:1em;
+    }
+    h3{
+        margin-top:1em;
+        font-size:1.5em;
+    }
 }

@@ -6,7 +6,7 @@
 <main class="container">
         <div class="content">
             <h2>@ViewData["Mensagem"]</h2>
-            <form action='@Url.Action("EditarPerfil","Usuario")' method="POST">
+            <form action='@Url.Action("EditarPerfil","Usuario")' method="POST" enctype="multipart/form-data">
                 <div class="campo">
                     <input type="text" name="nome" placeholder="Nome" maxlength="50"  value="@Model.Usuario.Nome" required>
                 </div>

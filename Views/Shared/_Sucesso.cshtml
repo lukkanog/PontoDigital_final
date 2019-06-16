@@ -13,8 +13,10 @@
         Model.LinkVoltar = (string)TempData["voltar"];
     }
 }
-<main>
-    <h2>Sucesso!</h2>
-    <p>@Model.Mensagem</p>
-    <a class='link' href=@Model.LinkVoltar>Voltar</a>
+<main class="container">
+    <div class="content">
+        <h2>Sucesso!</h2>
+        <p>@Model.Mensagem</p>
+        <a class='link' href=@Model.LinkVoltar>Voltar</a>
+    </div>
 </main>
