@@ -92,7 +92,7 @@ h3{
     
 }
 
-@media screen and (max-width:360px)
+@media screen and (max-width:400px)
 {
     .flex-me{
         padding:2em 0;

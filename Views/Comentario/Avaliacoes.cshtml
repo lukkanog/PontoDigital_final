@@ -13,8 +13,9 @@
                     <img src="@comentario.Autor.UrlFoto" alt="Foto de perfil">
                     <div class="texto">
                         <h3>@comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</h3>
-                        <h3>@comentario.Assunto</h3>
+                        <h4>@comentario.Assunto</h4>
                         <p>@comentario.Mensagem</p>
+                        <p id="data">@comentario.DataDoComentario.ToShortDateString()</p>
                     </div>
                 </div>
             }

@@ -61,6 +61,13 @@ namespace PontoDigital_final.Repositories
             }
             return listaDeUsuarios;
         }
+        
+        public List<Usuario> ListarAoContrario()
+        {
+            var lista = Listar();
+            lista.Reverse();
+            return lista;
+        }
 
         public Usuario TentarLogin(string email, string senha)
         {

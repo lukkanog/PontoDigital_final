@@ -8,21 +8,27 @@
             <h2>@ViewData["Mensagem"]</h2>
             <form action='@Url.Action("EditarPerfil","Usuario")' method="POST" enctype="multipart/form-data">
                 <div class="campo">
+                    <label for="nome">Nome completo</label>
                     <input type="text" name="nome" placeholder="Nome" maxlength="50"  value="@Model.Usuario.Nome" required>
                 </div>
                 <div class="campo">
+                    <label for="telefone">Número de telefone</label>
                     <input type="text" name="telefone" placeholder="Número de telefone" maxlength="12" value="@Model.Usuario.Telefone" required>
                 </div>
                 <div class="campo">
+                    <label for="endereco">Endereço</label>
                     <input type="text" name="endereco" placeholder="Seu Endereço" maxlength="70" value="@Model.Usuario.Endereco" required>
                 </div>
                 <div class="campo">
-                <input type="date" name="data-nascimento" placeholder="Data de Nascimento" value="@Model.Usuario.DataNascimento">
+                    <label for="dataNascimento">Data de nascimento</label>
+                <input type="date" name="dataNascimento" placeholder="Data de Nascimento" value="@Model.Usuario.DataNascimento">
                 </div>
                 <div class="campo">
+                    <label for="empresa">Empresa em que trabalha</label>
                     <input type="text" name="empresa" placeholder="Empresa" maxlength="50" value="@Model.Usuario.Empresa.Nome" required>
                 </div>
                 <div class="campo">
+                    <label for="cnpj">CNPJ da empresa</label>
                     <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" value="@Model.Usuario.Empresa.Cnpj" required>
                 </div>
                 <div class="campo">

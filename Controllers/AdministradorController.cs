@@ -247,7 +247,7 @@ namespace PontoDigital_final.Controllers
             UsuarioViewModel uvm = new UsuarioViewModel();
             uvm.ListaDeUsuarios = new List<Usuario>();
 
-            var listaDeUsuarios = usuarioRepositorio.Listar();
+            var listaDeUsuarios = usuarioRepositorio.ListarAoContrario();
             foreach (var item in listaDeUsuarios)
             {
                 if (item != null)
@@ -257,6 +257,14 @@ namespace PontoDigital_final.Controllers
             }
             return View(uvm);
         }
+
+        // [HttpGet]
+        // public IActionResult MostrarMais(int quantidadeExibida)
+        // {
+        //     quantidadeExibida ++;
+        //     return RedirectToAction("ExibirUsuarios");
+        // }
+
 
         [HttpGet]
         public IActionResult FazerLogout()

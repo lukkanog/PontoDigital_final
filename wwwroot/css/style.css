@@ -34,7 +34,7 @@ header{
 .menu ul{
     display:flex;
     list-style-type: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width:100%;
 }
 .menu ul a{
@@ -57,8 +57,10 @@ header{
 .logo{
     display:flex;
     text-decoration:none;
-    align-items: center;;
-    color:black
+    align-items: center;
+    color:black;
+    word-wrap: none;
+    line-break: none;
 }
 .logo img{
     height:6em;
@@ -85,15 +87,15 @@ button img{
     height:60%;
 }
 
-.banner{
+.banner.content{
     height:94vh;
     position:relative;
     top:-1em;
 
     background-image: url(../img/empresa.png);
     background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
+    background-size: cover;
+    background-position: center;
     width:100%;
 
     display:flex;
@@ -103,6 +105,7 @@ button img{
 }
 .banner img{
     height:70vh;
+    /* background-position-x: center; */
 }
 .banner p{
     font-size:2.5em;
@@ -397,7 +400,7 @@ address div{
 }
 
 
-@media screen and (max-width:360px){
+@media screen and (max-width:390px){
     .logo img{
         height:4em;
         top:0.5em;
@@ -416,10 +419,14 @@ address div{
         font-size:1em;
     }
     .banner{
+        /* background-position-y: bottom; */
         flex-flow:column nowrap;
         align-content: center;
         align-items: center;
-        justify-content: center;
+        /* justify-content: space-evenly; */
+    }
+    .banner .content{
+        background-position-x: 30%;;
     }
     .banner p{
         width:90%;
@@ -428,7 +435,7 @@ address div{
     }
     .banner img{
         height:30%;
-        padding-bottom:1em;
+        /* padding-bottom:-1em; */
     }
     .titulo_e_texto{
         width:95%;
@@ -452,7 +459,7 @@ address div{
     }
     #brasil img{
         /* width:60%; */
-        height:50vh;
+        height:45vh;
         margin-bottom:0.5em;
     }
     .coluna{

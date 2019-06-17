@@ -60,7 +60,7 @@ h2{
 }
 
 
-@media screen and (max-width:360px){
+@media screen and (max-width:390px){
     h2{
         font-size:1.5em;
         padding-top:2em;
@@ -70,7 +70,10 @@ h2{
         padding:1em 0.5em;
     }
     .textbox h3{
-        font-size:1.2em;
+        font-size:0.8em;
+    }
+    .textbox button{
+        font-size:1.3em;
     }
     .textbox p{
         font-size:1em;

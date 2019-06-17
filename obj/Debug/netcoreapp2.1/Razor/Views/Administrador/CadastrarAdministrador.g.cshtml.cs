@@ -62,7 +62,7 @@ using PontoDigital_final.Models;
             WriteLiteral("<main>\r\n    <h2>Cadastrar novo administrador</h2>\r\n    ");
             EndContext();
             BeginContext(178, 1344, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0edc6c3c9ef44dfe88e92e4566b859ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3370e18dc3054551bd564771512d7237", async() => {
                 BeginContext(261, 1254, true);
                 WriteLiteral(@"
         <div class=""campo"">

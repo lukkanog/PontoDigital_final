@@ -31,11 +31,11 @@ ViewData["css"] = "aprovar_comentarios-style.css";
             <div class="pessoa">
                 <img src="@comentario.Autor.UrlFoto" alt="Foto de Perfil">
                 <div class="texto" id="@comentario.Id">
-                    <p>ID: @comentario.Id</p>
-                    <p>Autor: @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</p>
-                    <p>Comentario feito em: @comentario.DataDoComentario</p>
-                    <p>Avaliação : @comentario.Assunto</p>
-                    <p>@comentario.Mensagem</p>
+                    <p><b>ID:</b> @comentario.Id</p>
+                    <p><b>Autor:</b> @comentario.Autor.Nome - @comentario.Autor.Empresa.Nome</p>
+                    <p><b>Comentario feito em:</b> @comentario.DataDoComentario</p>
+                    <p><b>Avaliação:</b> @comentario.Assunto</p>
+                    <p class="mensagem"><b>Mensagem:</b> @comentario.Mensagem</p>
                     @if (comentario.EstaAprovado == false)
                     {
                         <a href="/Administrador/AprovarComentario?id=@comentario.Id">Aprovar</a>
@@ -44,10 +44,8 @@ ViewData["css"] = "aprovar_comentarios-style.css";
                         <a href="/Administrador/RecusarComentario?id=@comentario.Id">Não exibir mais</a>
                     }
                 </div>
-
             </div>
             }   
-
         }
     </div>
 </main>

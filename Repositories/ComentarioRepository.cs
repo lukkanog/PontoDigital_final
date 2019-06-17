@@ -238,7 +238,7 @@ namespace PontoDigital_final.Repositories
             return listaNova;
         }
 
-        public string ObterFoto(string email)
+        private string ObterFoto(string email)
         {
             var listaDeUsuarios = usuarioRepositorio.Listar();
             foreach (var item in listaDeUsuarios)

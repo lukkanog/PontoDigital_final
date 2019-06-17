@@ -8,7 +8,12 @@
             @if(@ViewBag.User == null)
             {
                 <p>Agora você pode gerenciar o tempo de trabalho da sua empresa em qualquer lugar! <a href='@Url.Action("Index","Usuario")'>Cadastre-se já!</a> </p>
-            } else
+            }else if (@ViewBag.Admin != null)
+            {
+                <p>Seja bem vindo,
+                    <a class="link" href='@Url.Action("ExibirPerfil","Usuario")'>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@ViewBag.Admin.ToLower())</a>
+                !</p>
+            }else
             {
                 <p>Seja bem vindo,
                     <a class="link" href='@Url.Action("ExibirPerfil","Usuario")'>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@ViewBag.User.ToLower())</a>

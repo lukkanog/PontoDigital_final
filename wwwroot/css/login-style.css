@@ -51,6 +51,13 @@ form [type="submit"]{
     background-color:#BF8200;
     border:2px solid #BF8200;
 }
+#link_adm{
+    font-size:1em;  
+    color:#9fe1ff;
+}
+#link_adm:hover{
+    color:#f2a500;
+}
 
 
 

@@ -10,41 +10,52 @@
         
         <form action='@Url.Action("CadastrarUsuario","Usuario")' method="POST" enctype="multipart/form-data">
             <div class="campo">
-                <input type="text" name="nome" placeholder="Nome" maxlength="80" minlength="1" required>
+                <label for="nome">Nome completo</label>
+                <input type="text" name="nome" placeholder="Exemplo: Luis Inacio Lula da Silva" maxlength="80" minlength="1" required>
             </div>
             <div class="campo">
-                <input type="text" name="telefone" placeholder="Número de telefone" maxlength="18" required>
+                <label for="telefone">Número de telefone</label>
+                <input type="text" name="telefone" placeholder="Exemplo: (11)987654321" maxlength="18" required>
             </div>
             <div class="campo">
-                <input type="email" name="email" maxlength="50" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" maxlength="50" id="email" placeholder="Exemplo: email@hotmail.com" required>
             </div>
             <div class="campo genero">
+                <label for="genero">Gênero</label>
                 <select name="genero" id="genero" required>
-                    <option value="" disabled selected>Gênero</option>
+                    <option value="" disabled selected>Selecione</option>
                     <option value="MASCULINO">Masculino</option>
                     <option value="FEMININO">Feminino</option>
                     <option value="OUTRO">Outro</option>
                 </select>
             </div>
             <div class="campo">
-                <input type="text" name="endereco" placeholder="Seu Endereço" maxlength="70" required>
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" placeholder="Exemplo: Av. Paulista, 999, Centro, São Paulo-SP" maxlength="70" required>
             </div>
             <div class="campo">
+                <label for="dataNascimento">Data de Nascimento</label>
                 <input type="date" name="dataNascimento" placeholder="Data de Nascimento" required>
             </div>
             <div class="campo">
-                <input type="text" name="empresa" placeholder="Empresa" maxlength="50" required>
+                <label for="empresa">Empresa em que trabalha</label>
+                <input type="text" name="empresa" placeholder="Exemplo: Agora Vai" maxlength="50" required>
             </div>
             <div class="campo">
-                <input type="text" name="cnpj" placeholder="CNPJ da empresa" maxlength="40" required>
+                <label for="cnpj">CNPJ da empresa</label>
+                <input type="text" name="cnpj" placeholder="Exemplo: XX.XXX.XXX/YYYY-ZZ" maxlength="40" required>
             </div>
             <div class="campo">
+                <label for="foto">Foto de perfil (opcional)</label>
                 <input type="file" name="foto">
             </div>
             <div class="campo">
+                <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Nova Senha" required minlength="8" maxlength="40">
             </div>
             <div class="campo">
+                <label for="confirmarSenha">Confirme sua senha</label>
                 <input type="password" name="confirmarsenha" placeholder="Confirmar Senha" required minlength="8"
                     maxlength="40">
             </div>

@@ -39,12 +39,15 @@ h2{
     font-size:2em;
     margin-bottom:0.4em;
 }
-.texto h4{
-    font-size:1.6em;
-}
 .texto p{
     font-size:1.5em;
+    word-wrap: break-word;
     text-align:justify;
+    margin-top:0.4em;
+}
+#data{
+    font-size:1em;
+    text-align: right;
 }
 main a{
     text-decoration:none;
@@ -105,6 +108,7 @@ main a:hover{
     }
     .texto p{
         font-size:0.85em;
+        
     }
     main a{
         font-size:1em;
@@ -113,7 +117,7 @@ main a:hover{
 }
 
 
-@media screen and (max-width:360px){
+@media screen and (max-width:390px){
     h2{
         font-size:1.5em;
     }

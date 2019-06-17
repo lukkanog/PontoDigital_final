@@ -71,7 +71,7 @@ using PontoDigital_final.Models;
             WriteLiteral("        <h2>Resultado não encontrado</h2>\r\n        ");
             EndContext();
             BeginContext(345, 559, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cfcab1a492240cc9edd77e613220fe2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3809d525b5f44e03aecd8e4d62255669", async() => {
                 BeginContext(423, 474, true);
                 WriteLiteral(@"
                 <div class=""campo"">
@@ -124,7 +124,7 @@ AddHtmlAttributeValue("", 373, Url.Action("FiltrarResultados","Administrador"), 
             WriteLiteral("        ");
             EndContext();
             BeginContext(975, 528, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8cc450b9a4a94d25802ec3d97f3d7905", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1c9a757dc3a4fb08849c37259147444", async() => {
                 BeginContext(1053, 443, true);
                 WriteLiteral(@"
                 <div class=""campo"">

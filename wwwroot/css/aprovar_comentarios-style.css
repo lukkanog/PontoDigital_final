@@ -78,6 +78,10 @@ label{
     border-radius:10px;
     align-self: center;
 }
+.texto .mensagem{
+    word-wrap: break-word;
+    text-align: justify;
+}
 main a:hover{
     background-color:#59C9FE;
     text-shadow:1px 1.5px 50px #000,-1px -1.5px 50px #000;

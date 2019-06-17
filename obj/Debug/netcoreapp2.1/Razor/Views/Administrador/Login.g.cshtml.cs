@@ -62,7 +62,7 @@ using PontoDigital_final.Models;
             WriteLiteral("\r\n<main class=\"container\">\r\n    <div class=\"content\">\r\n        <h2>Entrar como administrador</h2>\r\n        ");
             EndContext();
             BeginContext(206, 363, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e93790c2700b4242b153767d845c5d93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "974064bfe8ed424ebaae0abfe960024a", async() => {
                 BeginContext(277, 285, true);
                 WriteLiteral(@"
             <input type=""email"" name=""email"" placeholder=""Email"" maxlength=""40"" required>

@@ -36,3 +36,17 @@ h2{
     flex-flow: column;
     justify-content: space-between;
 }
+
+@media screen and (max-width:390px)
+{
+    h2{
+        font-size:1.2em;
+    }
+    #dados-perfil{
+        flex-flow:column-reverse;
+    }
+    #foto_perfil{
+        height:13em;
+        width:13em;
+    }
+}
